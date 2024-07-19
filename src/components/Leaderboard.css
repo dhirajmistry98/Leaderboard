@@ -1,0 +1,130 @@
+.Leaderboard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f06, #f79, #f06); /* Abstract gradient */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite; /* Animated gradient */
+  color: #ffffff;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.Leaderboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wIDYwTDEwMCA2MEwwIDYwTDAgMCAwIDEwMCA2MCIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDcwMDAiIHN0cm9rZS13aWR0aD0iMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPjwvc3ZnPg=='); /* Abstract vector pattern */
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.leaderboard-header {
+  margin: 20px;
+  font-size: 3rem;
+  color: #ffffff; /* Contrast color */
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: center;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffff;
+}
+
+.leaderboard-item-name,
+.leaderboard-item-score {
+  flex: 1;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.leaderboard-item-name {
+  background: #007bff; /* Background color for name */
+  color: #ffffff;
+  border-radius: 8px 0 0 8px;
+}
+
+.leaderboard-item-score {
+  background: #28a745; /* Background color for score */
+  color: #ffffff;
+  border-radius: 0 8px 8px 0;
+  min-width: 100px; /* Ensure a minimum width for score */
+  text-align: right; /* Align numbers to the right */
+}
+
+button {
+  background: #ffffff;
+  color: #333333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+.add-score-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  background: #f9f9f9;
+  color: #333333;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-header {
+    font-size: 2rem;
+  }
+
+  .add-score-popup {
+    width: 90%;
+    padding: 15px;
+  }
+}
